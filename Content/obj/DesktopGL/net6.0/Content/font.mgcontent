@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>H:/source/C#/Solo0_3/MapEditor/Content/font.spritefont</SourceFile>
+  <SourceTime>2023-10-15T18:15:02.5454981+07:00</SourceTime>
+  <DestFile>H:/source/C#/Solo0_3/MapEditor/Content/bin/DesktopGL/Content/font.xnb</DestFile>
+  <DestTime>2023-10-29T15:01:44.7390661+07:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2022-07-26T18:44:56+07:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2022-07-26T18:44:56+07:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

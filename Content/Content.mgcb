@@ -1,0 +1,30 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+/build:font.spritefont
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+#begin openning.ogg
+#/importer:OggImporter
+#/processor:SoundEffectProcessor
+#/processorParam:Quality=Best
+#/build:Audio\openning.ogg
+
+#begin brush.png 
+#/importer:TextureImporter
+#/processor:TextureProcessor
+#/build:Textures\brush.png
+
+#begin mono_solo_texture.png
+#/importer:TextureImporter
+#/processor:TextureProcessor
+#/build:Textures\mono_solo_texture.png

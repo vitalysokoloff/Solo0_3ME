@@ -1,0 +1,28 @@
+window {
+	width: 1280
+	height: 720
+	fullscreen: False
+}
+game {
+	original-width: 1280
+	original-height: 720
+	gui-offset-x: 0
+	gui-offset-y: 0
+	original-font-name: "font"
+	root-directory: "Content"
+	maps-directory: "Maps"
+	textures-directory: "Textures"
+	audio-directory: "Audio"
+	name: "  Test Game  "
+	version: "Solo Engine 0.3"
+	original-width: False
+	mouse-visibility: True
+	opening-logos: True
+	debug-mode: True
+	god-mode: False
+	dev-console: True
+}
+audio {
+	music: 1f
+	sound: 0,5f
+}
