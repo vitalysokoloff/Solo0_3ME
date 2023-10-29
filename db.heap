@@ -1,0 +1,35 @@
+textures {
+	texture: "path"
+	a: "a"
+}
+sounds {
+	sound1: "path"
+}
+materials {
+	m1 {
+		texture: "a"
+		location: 0.0
+		size: 32.32
+	}
+}
+gos {
+	go1 {
+		categoty: "prop"
+		type: "enmy"
+		material: "mat1"
+	}
+	go2 {
+		categoty: "prop"
+		type: "enemy"
+		material: "m1"
+	}
+	b1 {
+		categoty: "brush"
+		type: "wall"
+		material: "m1"
+	}
+	trigger1 {
+		categoty: "trigger"
+		type: "switch"
+	}
+}
