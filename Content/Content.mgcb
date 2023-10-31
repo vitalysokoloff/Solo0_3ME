@@ -14,17 +14,17 @@
 
 #---------------------------------- Content ---------------------------------#
 #begin openning.ogg
-#/importer:OggImporter
-#/processor:SoundEffectProcessor
-#/processorParam:Quality=Best
-#/build:Audio\openning.ogg
+/importer:OggImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\openning.ogg
 
 #begin brush.png 
-#/importer:TextureImporter
-#/processor:TextureProcessor
-#/build:Textures\brush.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Textures\brush.png
 
 #begin mono_solo_texture.png
-#/importer:TextureImporter
-#/processor:TextureProcessor
-#/build:Textures\mono_solo_texture.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Textures\mono_solo_texture.png

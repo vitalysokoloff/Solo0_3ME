@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>H:/source/C#/Solo0_3/MapEditor/Content/Textures/brush.png</SourceFile>
+  <SourceTime>2023-10-14T11:40:29.0685555+07:00</SourceTime>
+  <DestFile>H:/source/C#/Solo0_3/MapEditor/Content/bin/DesktopGL/Content/Textures/brush.xnb</DestFile>
+  <DestTime>2023-10-30T21:35:30.8653343+07:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2022-07-26T18:44:56+07:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2022-07-26T18:44:56+07:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

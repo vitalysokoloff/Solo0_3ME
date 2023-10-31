@@ -40,13 +40,18 @@ namespace MapEditor
             string addPropHelp = @"^\+prop$";
             string addBrush = @"^\+brush\s[a-zA-Z0-9\-_]+\s[a-zA-Z0-9\-_]+\s[a-zA-Z0-9\-_]+$";          
             string addBrushHelp = @"^\+brush$";
-            string addTrigger = @"^\+trig\s[a-zA-Z0-9\-_]+\s[a-zA-Z0-9\-_]+$";          
+            string addTrigger = @"^\+trig\s[a-zA-Z0-9\-_]+\s[a-zA-Z0-9\-_]+\s[a-zA-Z0-9\-_,]+$";          
             string addTriggerHelp = @"^\+trig$"; 
             string makeNew = @"^\-new\s[a-zA-Z0-9\-_]+$";
             string makeNewHelp = @"^\-new$";
             string list = @"^\-list$";
             string open = @"^\-open\s[a-zA-Z0-9\-_]+$";
-            string openHelp = @"^\-open$";                    
+            string openHelp = @"^\-open$";
+            string layer = @"^\-layer\s[0-9]$";
+            string layerHelp = @"^\-layer$";
+            string gridm = @"^\-grid$";
+            string gridp = @"^\+grid$";
+                                
 
             base.ParseString(str);
 
@@ -155,6 +160,7 @@ namespace MapEditor
                 Heap trigger = new Heap();
                 trigger.Add("categoty", "trigger");
                 trigger.Add("type", tmp[2]);
+                trigger.Add("color", tmp[3]);
                 _gos.Add(tmp[1], trigger);
                 DbSave();
                 SConsole.WriteLine(trigger);
@@ -163,7 +169,7 @@ namespace MapEditor
             }
             if (Regex.IsMatch(str, addTriggerHelp))
             {   
-                SConsole.WriteLine("+trig <name> <type> <material>");             
+                SConsole.WriteLine("+trig <name> <type> <color<xx,xx,xx>>");             
                 return;
             }
             if (Regex.IsMatch(str, makeNew))
@@ -225,13 +231,43 @@ namespace MapEditor
                 SConsole.WriteLine("-open <name>");             
                 return;
             }
+            if (Regex.IsMatch(str, layer))
+            {  
+                string[] tmp = str.Split(' ');
+                _scene.Layer =  float.Parse("0," + tmp[1]); 
+                SConsole.WriteLine("Layer: " + _scene.Layer);             
+                return;
+            }
+            if (Regex.IsMatch(str, layerHelp))
+            {   
+                SConsole.WriteLine("-layer <0-9>");             
+                return;
+            }
+            if (Regex.IsMatch(str, gridm))
+            {   
+                int size = _scene.GridSize / 2;
+                _scene.GridSize = size < 9? 8 : size;
+                _scene.CursorScale = _scene.GridSize / 2;
+                SConsole.WriteLine("Grid: " + _scene.GridSize);             
+                return;
+            }
+            if (Regex.IsMatch(str, gridp))
+            {   
+                int size = _scene.GridSize * 2;
+                _scene.GridSize = size > 255? 256 : size;
+                _scene.CursorScale = _scene.GridSize / 2;
+                SConsole.WriteLine("Grid: " + _scene.GridSize);             
+                return;
+            }
         }
 
         public override void Help()
         {
             SConsole.WriteLine("-----editor commands list-----");
             SConsole.WriteLine("+tex  |  +sound  |  +material  |  +prop  |  +trig  | +brush");
-            SConsole.WriteLine("-new  |  -open  |  -save  |  -list");
+            SConsole.WriteLine("-new  |  -open  |  -save*  |  -list");
+            SConsole.WriteLine("-layer  |");
+            SConsole.WriteLine("-grid  | +grid");
             SConsole.WriteLine("-----default commands list-----");
             SConsole.WriteLine("-resolution   |   -resolutiob on/off |   -fullscreen on/off   |   -music            |   -music x.x  ");
             SConsole.WriteLine("-sound        |   -sound x.x         |   -opening on/off      |   -debug on/off     | -god on/off   ");

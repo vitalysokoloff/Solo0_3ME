@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>H:/source/C#/Solo0_3/MapEditor/Content/Audio/openning.ogg</SourceFile>
+  <SourceTime>2023-10-23T21:33:11.0482689+07:00</SourceTime>
+  <DestFile>H:/source/C#/Solo0_3/MapEditor/Content/bin/DesktopGL/Content/Audio/openning.xnb</DestFile>
+  <DestTime>2023-10-30T21:35:30.7395937+07:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2022-07-26T18:44:56+07:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2022-07-26T18:44:56+07:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

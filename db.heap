@@ -32,4 +32,9 @@ gos {
 		categoty: "trigger"
 		type: "switch"
 	}
+	testtrig {
+		categoty: "trigger"
+		type: "test"
+		color: "0,255,0"
+	}
 }

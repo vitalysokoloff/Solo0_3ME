@@ -5,8 +5,14 @@
   <Config />
   <SourceFiles>
     <File>H:/source/C#/Solo0_3/MapEditor/Content/font.spritefont</File>
+    <File>H:/source/C#/Solo0_3/MapEditor/Content/Audio/openning.ogg</File>
+    <File>H:/source/C#/Solo0_3/MapEditor/Content/Textures/brush.png</File>
+    <File>H:/source/C#/Solo0_3/MapEditor/Content/Textures/mono_solo_texture.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
