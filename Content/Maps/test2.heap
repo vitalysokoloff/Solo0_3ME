@@ -1,0 +1,12 @@
+name: "new-map"
+description: "..."
+camera-focus: ""
+camera-position: 640f.360f
+textures {
+}
+sounds {
+}
+materials {
+}
+gos {
+}

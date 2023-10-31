@@ -3,10 +3,36 @@ description: "..."
 camera-focus: ""
 camera-position: 640f.360f
 textures {
+  brush: "brush"
 }
 sounds {
+ openning: "openning"
 }
 materials {
+  brush {
+    texture: "brush"
+    location: 0.0
+    size: 32.32
+  }
 }
 gos {
+    player {
+        category: "prop"
+        material: "brush"
+        position: 400f.400f
+        layer: 0.5f
+    }
+    trigger {
+        category: "trigger"
+        position: 500f.500f
+        size: 100.100
+        color: "255,0,0"
+    }
+    brush {
+        category: "brush"
+        material: "brush"
+        location: 50.50
+        size: 320.320
+        layer: 0.5f
+    }
 }

@@ -26,3 +26,6 @@ H:\source\C#\Solo0_3\MapEditor\obj\Debug\net6.0\ref\MapEditor.dll
 H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Solo.dll
 H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Solo.pdb
 H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Content\font.xnb
+H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Content\Audio\openning.xnb
+H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Content\Textures\brush.xnb
+H:\source\C#\Solo0_3\MapEditor\bin\Debug\net6.0\Content\Textures\mono_solo_texture.xnb
