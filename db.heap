@@ -1,39 +1,42 @@
 textures {
-	texture: "path"
+	texture: "brush"
 	a: "a"
 }
 sounds {
 	sound1: "path"
 }
 materials {
-	m1 {
-		texture: "a"
+	brush {
+		texture: "brush"
 		location: 0.0
 		size: 32.32
 	}
 }
 gos {
 	go1 {
-		categoty: "prop"
-		type: "enmy"
-		material: "mat1"
+		category: "prop"
+		type: "enemy"
+		material: "brush"
 	}
 	go2 {
-		categoty: "prop"
+		category: "prop"
 		type: "enemy"
 		material: "m1"
 	}
-	b1 {
-		categoty: "brush"
-		type: "wall"
-		material: "m1"
+	brush {
+		category: "brush"
+		type: "floor"
+		material: "brush"
+		location: 50.50
+		size: 320.320
 	}
-	trigger1 {
-		categoty: "trigger"
+	t1 {
+		category: "trigger"
 		type: "switch"
+		color: "0,0,255"
 	}
 	testtrig {
-		categoty: "trigger"
+		category: "trigger"
 		type: "test"
 		color: "0,255,0"
 	}

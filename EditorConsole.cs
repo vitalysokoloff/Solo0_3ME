@@ -17,6 +17,7 @@ namespace MapEditor
         protected Heap _sounds;
         protected Heap _materials;
         protected Heap _gos;
+        protected string _path;
         public EditorConsole(GraphicsDeviceManager graphics, Camera camera, SpriteFont font, Settings settings, EditorScene scene) : base (graphics, camera, font, settings)
         {
             _scene = scene;
@@ -47,10 +48,18 @@ namespace MapEditor
             string list = @"^\-list$";
             string open = @"^\-open\s[a-zA-Z0-9\-_]+$";
             string openHelp = @"^\-open$";
+            string layer1f = @"^\-layer\s1f$";
             string layer = @"^\-layer\s[0-9]$";
             string layerHelp = @"^\-layer$";
             string gridm = @"^\-grid$";
             string gridp = @"^\+grid$";
+            string gridon = @"^\-grid\son$";
+            string gridoff = @"^\-grid\soff$";
+            string pen = @"^\+pen\s[a-zA-Z0-9\-_]+$";
+            string penHelp = @"^\+pen$";
+            string penoff = @"^\-pen$";
+            string del = @"^\-del$";
+            string save = @"^\-save$";
                                 
 
             base.ParseString(str);
@@ -217,6 +226,7 @@ namespace MapEditor
                 if (File.Exists(path))
                 {
                     SConsole.WriteLine("Trying to open " + path);
+                    _path = path;
                     ConsoleOpenEvent?.Invoke(path);         
                     return;
                 }
@@ -231,6 +241,13 @@ namespace MapEditor
                 SConsole.WriteLine("-open <name>");             
                 return;
             }
+            if (Regex.IsMatch(str, layer1f))
+            {  
+                string[] tmp = str.Split(' ');
+                _scene.Layer =  1; 
+                SConsole.WriteLine("Layer: " + _scene.Layer);             
+                return;
+            }
             if (Regex.IsMatch(str, layer))
             {  
                 string[] tmp = str.Split(' ');
@@ -240,7 +257,8 @@ namespace MapEditor
             }
             if (Regex.IsMatch(str, layerHelp))
             {   
-                SConsole.WriteLine("-layer <0-9>");             
+                SConsole.WriteLine("-layer <0-9>");
+                SConsole.WriteLine("current layer is " + _scene.Layer);              
                 return;
             }
             if (Regex.IsMatch(str, gridm))
@@ -248,7 +266,8 @@ namespace MapEditor
                 int size = _scene.GridSize / 2;
                 _scene.GridSize = size < 9? 8 : size;
                 _scene.CursorScale = _scene.GridSize / 2;
-                SConsole.WriteLine("Grid: " + _scene.GridSize);             
+                SConsole.WriteLine("Grid: " + _scene.GridSize);
+                ((EditorScene)_scene).ResetGridTexture();             
                 return;
             }
             if (Regex.IsMatch(str, gridp))
@@ -256,7 +275,64 @@ namespace MapEditor
                 int size = _scene.GridSize * 2;
                 _scene.GridSize = size > 255? 256 : size;
                 _scene.CursorScale = _scene.GridSize / 2;
-                SConsole.WriteLine("Grid: " + _scene.GridSize);             
+                SConsole.WriteLine("Grid: " + _scene.GridSize); 
+                ((EditorScene)_scene).ResetGridTexture();            
+                return;
+            }
+            if (Regex.IsMatch(str, gridon))
+            {   
+                ((EditorScene)_scene).IsGrid = true;
+                SConsole.WriteLine("Grid: вкл.");             
+                return;
+            }
+            if (Regex.IsMatch(str, gridoff))
+            {   
+                ((EditorScene)_scene).IsGrid = false;
+                SConsole.WriteLine("Grid: выкл.");             
+                return;
+            }
+            if (Regex.IsMatch(str, pen))
+            {  
+                string[] tmp = str.Split(' ');
+                if (_gos.GetHeap(tmp[1]) == null)
+                {
+                    SConsole.WriteLine("нет такого! Список пресетов:");
+                    foreach (string k in _gos.GetHeapKeys())
+                    {
+                        SConsole.WriteLine(k);
+                    }
+                }
+                else
+                {
+                    ((EditorScene)_scene).CurGOInfo = tmp[1];
+                    ((EditorScene)_scene).EditorMode = 1;
+                    SConsole.WriteLine("set pen: " + tmp[1]);
+                }              
+                return;
+            }
+            if (Regex.IsMatch(str, penHelp))
+            {   
+                SConsole.WriteLine("+pen <GO name>"); 
+                SConsole.WriteLine("левая кнопка мыши - позиция. правая - размер");            
+                return;
+            }
+            if (Regex.IsMatch(str, penoff))
+            {   
+                ((EditorScene)_scene).EditorMode = 0;
+                SConsole.WriteLine("pen: off");             
+                return;
+            }
+            if (Regex.IsMatch(str, save))
+            {   
+                ((EditorScene)_scene).Save(_path);
+                SConsole.WriteLine(_path + " saved");             
+                return;
+            }
+            if (Regex.IsMatch(str, del))
+            {   
+                ((EditorScene)_scene).EditorMode = 2;
+                SConsole.WriteLine("pen: delete"); 
+                SConsole.WriteLine("левая кнопка мыши - удалить");              
                 return;
             }
         }
@@ -267,7 +343,8 @@ namespace MapEditor
             SConsole.WriteLine("+tex  |  +sound  |  +material  |  +prop  |  +trig  | +brush");
             SConsole.WriteLine("-new  |  -open  |  -save*  |  -list");
             SConsole.WriteLine("-layer  |");
-            SConsole.WriteLine("-grid  | +grid");
+            SConsole.WriteLine("-grid  | +grid | -grid on  | -grid off");
+            SConsole.WriteLine("+pen  | -pen");
             SConsole.WriteLine("-----default commands list-----");
             SConsole.WriteLine("-resolution   |   -resolutiob on/off |   -fullscreen on/off   |   -music            |   -music x.x  ");
             SConsole.WriteLine("-sound        |   -sound x.x         |   -opening on/off      |   -debug on/off     | -god on/off   ");

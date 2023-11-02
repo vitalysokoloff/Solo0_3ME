@@ -1,38 +1,477 @@
 name: "new-map"
 description: "..."
-camera-focus: ""
 camera-position: 640f.360f
 textures {
-  brush: "brush"
+	brush: "brush"
 }
 sounds {
- openning: "openning"
+	openning: "openning"
 }
 materials {
-  brush {
-    texture: "brush"
-    location: 0.0
-    size: 32.32
-  }
+	brush {
+		texture: "brush"
+		location: 0.0
+		size: 32.32
+	}
 }
 gos {
-    player {
-        category: "prop"
-        material: "brush"
-        position: 400f.400f
-        layer: 0.5f
-    }
-    trigger {
-        category: "trigger"
-        position: 500f.500f
-        size: 100.100
-        color: "255,0,0"
-    }
-    brush {
-        category: "brush"
-        material: "brush"
-        location: 50.50
-        size: 320.320
-        layer: 0.5f
-    }
+	go14 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 112f.752f
+	}
+	go15 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 144f.784f
+	}
+	go16 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 176f.816f
+	}
+	go17 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 144f.848f
+	}
+	go18 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 112f.880f
+	}
+	go19 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 208f.784f
+	}
+	go110 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 240f.752f
+	}
+	go111 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 208f.848f
+	}
+	go112 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 240f.880f
+	}
+	go113 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 304f.752f
+	}
+	go114 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 304f.784f
+	}
+	go115 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 304f.816f
+	}
+	go116 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 336f.816f
+	}
+	go117 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 368f.816f
+	}
+	go118 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 368f.784f
+	}
+	go119 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 368f.752f
+	}
+	go120 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 368f.848f
+	}
+	go121 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 368f.880f
+	}
+	go122 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 336f.880f
+	}
+	go123 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 304f.880f
+	}
+	go124 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 432f.752f
+	}
+	go125 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 432f.784f
+	}
+	go126 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 432f.816f
+	}
+	go127 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 432f.848f
+	}
+	go128 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 432f.880f
+	}
+	go129 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 464f.848f
+	}
+	go130 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 496f.816f
+	}
+	go131 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 528f.752f
+	}
+	go132 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 528f.784f
+	}
+	go133 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 528f.816f
+	}
+	go134 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 528f.848f
+	}
+	go135 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 528f.880f
+	}
+	go136 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 464f.688f
+	}
+	go137 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 496f.688f
+	}
+	brush38 {
+		layer: 0f
+		category: "brush"
+		type: "floor"
+		material: "brush"
+		location: 96.608
+		size: 448.32
+	}
+	brush39 {
+		layer: 0f
+		category: "brush"
+		type: "floor"
+		material: "brush"
+		location: 96.928
+		size: 448.32
+	}
+	t140 {
+		category: "trigger"
+		type: "switch"
+		color: "0,0,255"
+		size: 448.352
+		position: 96f.608f
+	}
+	go139 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 624f.816f
+	}
+	go138 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 624f.784f
+	}
+	go140 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 624f.848f
+	}
+	go1371 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 624f.752f
+	}
+	go141 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 624f.880f
+	}
+	go142 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 656f.816f
+	}
+	go143 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 688f.816f
+	}
+	go144 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 720f.816f
+	}
+	go145 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 720f.784f
+	}
+	go146 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 720f.752f
+	}
+	go147 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 720f.848f
+	}
+	go148 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 720f.880f
+	}
+	go149 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 784f.880f
+	}
+	go150 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 784f.848f
+	}
+	go151 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 784f.816f
+	}
+	go152 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 784f.784f
+	}
+	go153 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 816f.752f
+	}
+	go154 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 848f.752f
+	}
+	go155 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 880f.752f
+	}
+	go156 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 880f.784f
+	}
+	go157 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 880f.816f
+	}
+	go158 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 848f.816f
+	}
+	go159 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 816f.816f
+	}
+	go160 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 880f.848f
+	}
+	go161 {
+		layer: 0f
+		category: "prop"
+		type: "enemy"
+		material: "brush"
+		position: 880f.880f
+	}
+	brush64 {
+		layer: 0f
+		category: "brush"
+		type: "floor"
+		material: "brush"
+		location: 608.608
+		size: 288.32
+	}
+	brush63 {
+		layer: 0f
+		category: "brush"
+		type: "floor"
+		material: "brush"
+		location: 608.928
+		size: 288.32
+	}
+	t164 {
+		category: "trigger"
+		type: "switch"
+		color: "0,0,255"
+		size: 288.352
+		position: 608f.608f
+	}
 }
