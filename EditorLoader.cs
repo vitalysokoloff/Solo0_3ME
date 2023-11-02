@@ -24,24 +24,24 @@ namespace MapEditor
                     ((EditorScene)_scene).GOsInfo.Add(k, go);
                     if (go.GetString("category") == "prop")
                     {
-                        AddGO(k, GetProp(go));                        
+                        AddGO(k, GetProp(k, go));                       
                     }
                     if (go.GetString("category") == "trigger")
                     {
-                        AddGO(k, GetTrigger(go));                          
+                        AddGO(k, GetTrigger(k, go));                         
                     }
                     if (go.GetString("category") == "brush")
                     {
-                        AddGO(k, GetBrush(go));                          
+                        AddGO(k, GetBrush(k, go));                           
                     }
                 }
                 if (_map.GetString("camera-focus") != "")
                 {
                     _scene.Camera.Focus = _scene.GOs[_map.GetString("camera-focus")];
                 }
-            }
+            }           
 
-            protected IGameObject GetProp(Heap go)
+            protected IGameObject GetProp(string name, Heap go)
             {
                 SMaterial material = _scene.Materials[go.GetString("material")];
                 Vector2 position = go.GetVector2("position");
@@ -53,10 +53,12 @@ namespace MapEditor
                     new Collider(new SRectangle(material.SourceRectangle), Vector2.Zero), 
                     layer
                 );
+                prop.Name = name;
+
                 return prop;
             }
 
-            protected IGameObject GetTrigger(Heap go)
+            protected IGameObject GetTrigger(string name, Heap go)
             {                
                 Vector2 position = go.GetVector2("position");
                 Point size = go.GetPoint("size");
@@ -64,10 +66,11 @@ namespace MapEditor
                 Trigger trigger = new Trigger(position, size);
                 string[] tmp = colorSource.Split(",");
                 trigger.Color = new Color(int.Parse(tmp[0]), int.Parse(tmp[1]), int.Parse(tmp[2]));
+                trigger.Name = name;
                 return trigger;
             }
 
-            protected IGameObject GetBrush(Heap go)
+            protected IGameObject GetBrush(string name, Heap go)
             {
                 SMaterial material = _scene.Materials[go.GetString("material")];
                 Point location = go.GetPoint("location");
@@ -75,6 +78,7 @@ namespace MapEditor
                 float layer = go.GetFloat("layer");
                 Brush brush = new Brush(material, new Rectangle(location, size));
                 brush.Layer = layer;
+                brush.Name = name;
                 return brush;
             }
         }
